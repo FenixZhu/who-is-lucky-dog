@@ -19,7 +19,7 @@ int suiji(void)
 	b=((unsigned int)time(0))*166234%61342*123466%5231;
 	while(b>MAX)
 		b%=MAX;
-	while(a<MIN)
+	while(b<MIN)
 		b=MIN;
 
 	return b;
