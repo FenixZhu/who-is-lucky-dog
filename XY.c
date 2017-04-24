@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include<time.h>
+#define X 16
+#define Y 11
+int xsuiji(void);
+int ysuiji(void);
+int xxuanze(int a);
+int yxuanze(int a);
+int main(void)
+{	
+	int x=0,y=0;
+
+	printf("                           欢迎使用简陋得不能再简陋的幸运观众抽取器！                      \n");
+	printf("                                     本软件冷却时间1S钟！                                  \n");
+	printf("                                     按下回车键进行抽取！                                  \n");
+	x=xsuiji();
+	y=ysuiji();
+	
+
+	getchar();
+	printf("                               本次抽取的幸运观众是%d排%d列的同学!!!                               \n",yxuanze(y),xxuanze(x));
+	
+	return 0;
+}
+int xsuiji(void)
+{	
+	int b=0;
+	b=((unsigned int)time(0))*166234%61342*123466%5231;
+
+	return b;
+}
+int ysuiji(void)
+{
+	int b=0;
+	b=((unsigned int)time(0))*982831%38724*192466%7081;
+
+	return b;
+}
+int xxuanze(int a)
+{	
+	while(a>X)
+		a%=X;
+	while(a<=0)
+		a=1;
+	return a;
+}
+int yxuanze(int a)
+{	
+	while(a>Y)
+		a%=Y;
+	while(a<=0)
+		a=1;
+	return a;
+}
+
+
+
+
