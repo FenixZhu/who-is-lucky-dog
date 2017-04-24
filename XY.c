@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<time.h>
-#define X 16
-#define Y 11
+#define X 15
+#define Y 10
 int xsuiji(void);
 int ysuiji(void);
 int main(void)
@@ -21,8 +21,8 @@ int xsuiji(void)
 {	
 	int a=0;
 	a=((unsigned int)time(0))*166234%61342*123466%5231;
-	while(a>X)
-		a%=X;
+	while(a>(X+1))
+		a=a%X+1;
 	while(a<=0)
 		a=1;
 
@@ -33,8 +33,8 @@ int ysuiji(void)
 {
 	int a=0;
 	a=((unsigned int)time(0))*982831%38724*192466%7081;
-	while(a>Y)
-		a%=Y;
+	while(a>(Y+1))
+		a=a%Y+1;
 	while(a<=0)
 		a=1;
 	
